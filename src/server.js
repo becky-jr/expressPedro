@@ -1,13 +1,18 @@
 
 // const express = require('express'); 
 // as in "type: module;" I am using import instead of require
-
-import express from "express"
-
 // const router = require('./routes');  // ← получаем то, что было в module.exports
 // app.use('/api', router); this would be in common js
 
+import express from "express"
+import {config} from "dotenv"
+import {connectDB, disconnectDB} from './config/db.js'
+
+// import routes 
 import movieRoutes from './routes/movieRoutes.js'
+
+config()
+connectDB()
 
 const app = express(); 
 
