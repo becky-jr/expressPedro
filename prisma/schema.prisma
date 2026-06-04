@@ -41,6 +41,8 @@ model User {
   password String
 
   cretedAt DateTime @default(now())
+
+  
 }
 
 // USER -> MOVIE -> WATCHLIST
