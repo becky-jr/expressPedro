@@ -1,4 +1,6 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client"; //prisma 6
+// import { PrismaClient } from "../generated/prisma"  // или относительный путь от db.js
+
 
 const prisma = new PrismaClient({
     log: process.env.NODE_ENV === "development"
@@ -21,4 +23,4 @@ const disconnectDB = async () => {
     await prisma.$disconnect();
 }
 
-export {prisma, connectDB, disconnectDB}
+export { prisma, connectDB, disconnectDB }
